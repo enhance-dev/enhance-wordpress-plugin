@@ -50,7 +50,7 @@ This element is authored as an HTML web component or custom element (i.e. `<my-h
 With the SSR plugin these can be used anywhere in the wordpress site and the plugin will expand them just before they are sent to the browser.
 They can be used:
 1. Directly in PHP templates
-![single.php template with my-header tag](/docs/images/in-php-templates.png)
+![single.php template with my-header tag](/docs/images/in-php-template.png)
 
 2. In raw HTML blocks anywhere
 ![my-header tag in raw html block](/docs/images/in-html-blocks.png)
