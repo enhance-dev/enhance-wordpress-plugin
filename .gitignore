@@ -5,6 +5,9 @@
 #
 # Note: if you want to stage/commit WP core files
 # you can delete this whole section/until Configuration.
+.DS_Store
+composer.lock
+/vendor/
 /wp-admin/
 /wp-content/index.php
 /wp-content/languages

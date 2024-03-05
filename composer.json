@@ -1,0 +1,30 @@
+{
+  "name": "enhance/enhance-wordpress",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "EnhanceSsrPhp\\": "/src"
+    }
+  },
+  "authors": [
+    {
+      "name": "ryanbethel",
+      "email": "ryan.bethel@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "extism/extism": "dev-main"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "@composer addEnhanceSsrToVendor"
+    ],
+    "post-update-cmd": [
+      "@composer addEnhanceSsrToVendor"
+    ],
+    "addEnhanceSsrToVendor": [
+      "mkdir -p vendor/enhance/ssr-wasm && cd \"$_\" && curl -L https://github.com/enhance-dev/enhance-ssr-wasm/releases/download/v0.0.3/enhance-ssr.wasm.gz | gunzip > enhance-ssr.wasm"
+    ]
+  }
+}
