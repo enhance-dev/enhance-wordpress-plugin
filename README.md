@@ -58,4 +58,65 @@ They can be used:
 3. As Gutenburg blocks
 ![my-header in WP editor](/docs/images/in-gutenburg-block.png)
 
+### Enhance Elements as Gutenburg blocks
+The new Wordpress block editor uses React for the editor and for rendering individual blocks before storing them as plain html in the database.
+Enhance elements are pure functions that run on the server to render plain HTML.
+That does not mean that they can't have clientside JavaScript, but the baseline experience is HTML.
+One way to wrap Enhance Elements so that they work in the block editor is shown below:
+
+```javascript
+// custom-blocks/my-header.js
+( function( blocks, element, blockEditor ) {
+    let el = element.createElement;
+    let RichText = blockEditor.RichText;
+    
+    blocks.registerBlockType( 'enhance-plugin/my-header-block', {
+        title: 'My Header',
+        icon: 'heading',
+        category: 'layout',
+        attributes: {
+            content: {
+                type: 'string',
+                source: 'html',
+                selector: 'my-header',
+            },
+        },
+        edit: function( props ) {
+            var content = props.attributes.content;
+            function onChangeContent( newContent ) {
+                props.setAttributes( { content: newContent } );
+            }
+
+            return el(
+                RichText,
+                {
+                    tagName: 'h1',
+                    className: 'my-custom-header',
+                    style: { color: 'red' },
+                    value: content,
+                    onChange: onChangeContent,
+                }
+            );
+        },
+        // Save should be the authored/non-expanded html form of my-header (i.e. `<my-header>Hello World</my-header>`)
+        save: function( props ) {
+            const htmlContent = props.attributes.content
+            return el( 'my-header', { dangerouslySetInnerHTML: { __html: htmlContent } } , null );
+        },
+      }
+    );
+} )( window.wp.blocks, window.wp.element, window.wp.blockEditor );
+
+```
+
+The `edit` function uses the block editor rich text component.
+This is a React Component as required.
+Styles can be added to visually match the actual rendered component. 
+
+The `save` function is what will be rendered to create an HTML fragment to save in the WP database.
+The editor uses React to render this fragment.
+What we want to render is the "Authored" version of the enhance element. 
+The SSR plugin will expand this element when it is used in the post/page. 
+So we want to render the tag name (`my-header`) with the authored content. 
+We use the good old `dangerouslySetInnerHTML` to escape the bonds of React and render the HTML we want to save to the database.
 
