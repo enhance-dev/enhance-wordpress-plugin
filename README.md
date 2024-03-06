@@ -12,7 +12,7 @@ This works with the SSR plugin. These blocks are stored in the WP database as HT
 
 
 ## Requirements
-This plugin requires that you can install the [Extism](https://extism.org) binary to in order to run the WASM (Web Assembly) Enhance SSR library.
+This plugin requires the [Extism](https://extism.org) binary in order to run the WASM (Web Assembly) Enhance SSR library.
 It also requires that you can edit the `php.ini` file for the environment. 
 For that reason it may not be possible to run the plugin in some free wordpress hosting providers.
 
