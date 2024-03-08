@@ -40,4 +40,4 @@ If you want to try out this plugin one of the best ways we know is by running [L
 1. Click `Plugins` from the left hand menu
 1. Activate `Enhance components as Guetenburg blocks` and `Enhance SSR` plugins.
 
-Now you are reading to being [using your elements](../readme.md#use-elements).
+Now you are reading to being [using your elements](../README.md#use-elements).
