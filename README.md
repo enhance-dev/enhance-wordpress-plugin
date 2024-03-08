@@ -7,13 +7,13 @@ Two plugins are included:
 1. `enhance-ssr-wp-plugin.php` server side render any enhance custom elements in the wordpress site.
 These can be added in PHP templates, raw HTML blocks in the editor, or as predefined blocks.
 
-2. `enhance-wp-blocks-plugin.php` demonstrates wrapping an Enhance component for use in the block editor. 
+2. `enhance-wp-blocks-plugin.php` demonstrates wrapping an Enhance component for use in the block editor.
 This works with the SSR plugin. These blocks are stored in the WP database as HTML (i.e. <my-header>Hi</my-header>) and then the SSR plugin will them wherever they are used.
 
 
 ## Requirements
 This plugin requires the [Extism](https://extism.org) binary in order to run the WASM (Web Assembly) Enhance SSR library.
-It also requires that you can edit the `php.ini` file for the environment. 
+It also requires that you can edit the `php.ini` file for the environment.
 For that reason it may not be possible to run the plugin in some free wordpress hosting providers.
 
 ### Install Extism Runtime Dependency
@@ -33,6 +33,10 @@ Add the following to `php.ini`.
 ```sh
 ffi.enable=true
 ```
+
+## Development Copy of WordPress Instructions
+
+- [Local](./docs/wp-local.md)
 
 ## Examples
 
@@ -69,7 +73,7 @@ One way to wrap Enhance Elements so that they work in the block editor is shown 
 ( function( blocks, element, blockEditor ) {
     let el = element.createElement;
     let RichText = blockEditor.RichText;
-    
+
     blocks.registerBlockType( 'enhance-plugin/my-header-block', {
         title: 'My Header',
         icon: 'heading',
@@ -111,12 +115,12 @@ One way to wrap Enhance Elements so that they work in the block editor is shown 
 
 The `edit` function uses the block editor rich text component.
 This is a React Component as required.
-Styles can be added to visually match the actual rendered component. 
+Styles can be added to visually match the actual rendered component.
 
 The `save` function is what will be rendered to create an HTML fragment to save in the WP database.
 The editor uses React to render this fragment.
-What we want to render is the "Authored" version of the enhance element. 
-The SSR plugin will expand this element when it is used in the post/page. 
-So we want to render the tag name (`my-header`) with the authored content. 
+What we want to render is the "Authored" version of the enhance element.
+The SSR plugin will expand this element when it is used in the post/page.
+So we want to render the tag name (`my-header`) with the authored content.
 We use the good old `dangerouslySetInnerHTML` to escape the bonds of React and render the HTML we want to save to the database.
 
