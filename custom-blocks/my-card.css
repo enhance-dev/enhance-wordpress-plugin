@@ -1,2 +1,5 @@
-.wp-block-my-plugin-my-custom-card {
+.my-custom-card label {
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 500;
 }

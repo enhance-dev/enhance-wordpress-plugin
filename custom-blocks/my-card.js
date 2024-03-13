@@ -39,30 +39,12 @@
           return el(
             'div',
             {
-              style: {
-                position: 'relative',
-                display: 'flex',
-                flexDirection: 'column',
-                minWidth: '0',
-                wordWrap: 'break-word',
-                color: 'black',
-                backgroundColor: '#fff',
-                backgroundClip: 'border-box',
-                border: '1px solid rgba(0,0,0,.125)',
-                borderRadius: '0.25rem',
-              }
+              className: 'my-custom-card',
             },
             el('label', {}, 'Title'),
             el(
               PlainText,
               {
-                  tagName: 'h5',
-                  className: 'my-custom-title',
-                  style: {
-                    marginBottom: '0.75rem',
-                    fontSize: '1.25rem',
-                    fontWeight: '500'
-                  },
                   value: title,
                   onChange: onChangeTitle,
               }
@@ -71,9 +53,6 @@
             el(
               RichText,
               {
-                  tagName: 'span',
-                  className: 'my-custom-description',
-                  style: { },
                   value: content,
                   onChange: onChangeContent,
               }
@@ -82,7 +61,6 @@
             el(
               PlainText,
               {
-                  className: 'my-custom-image-url',
                   value: imageUrl,
                   onChange: onChangeImageUrl,
               }
