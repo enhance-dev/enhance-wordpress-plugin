@@ -5,14 +5,14 @@ function MyCard({ html, state }) {
     function createImageTag(image) {
       if (image) {
         return `
-        <a href='${image}' class='block overflow-hidden'>
+        <a href='${image}'>
           <img src='${image}' class="card-img" />
         </a>
-        <dialog class='m-auto overflow-visible'>
-          <form method='dialog' class='text-end relative z1'>
-            <button class='close-button radius-100 font-semibold'>&times;</button>
+        <dialog>
+          <form method='dialog'>
+            <button class='close-button'>&times;</button>
           </form>
-          <img src='${image}' class='m-auto' />
+          <img src='${image}' />
         </dialog>`
       } else {
         return ''
@@ -47,27 +47,44 @@ function MyCard({ html, state }) {
             font-size: 1.25rem;
             font-weight: 500;
         }
+
+        a {
+          display:block;
+          overflow:hidden;
+        }
+
         dialog {
-        background: transparent;
-        padding-inline: var(--space-0);
-      }
+          background: white;
+          padding-inline: clamp(1rem, 0.97rem + 0.17vw, 1.13rem);
+          margin: auto;
+          overflow:visible;
+        }
 
-      .close-button {
-        background-color: white;
-        block-size: 2em;
-        inline-size: 2em;
-        box-shadow: 0 4px 12px hsla(0deg 0% 0% / 0.2);
-        translate: 1em 1em;
-      }
+        .close-button {
+          background-color: white;
+          block-size: 2em;
+          inline-size: 2em;
+          box-shadow: 0 4px 12px hsla(0deg 0% 0% / 0.2);
+          translate: 1em 1em;
+          border-radius:100%;
+          font-weight:600;
+        }
 
-      dialog img {
-        max-block-size: var(--max-height, 80vh);
-        border: var(--space-0) solid white;
-      }
+        dialog img {
+          max-block-size: var(--max-height, 80vh);
+          border: var(--space-0) solid white;
+          margin: auto;
+        }
 
-      dialog::backdrop {
-        background-color: var(--background-color, hsla(0deg 0% 0% / 0.5));
-      }
+        dialog::backdrop {
+          background-color: var(--background-color, hsla(0deg 0% 0% / 0.5));
+        }
+
+        dialog form {
+          text-align:end;
+          position:relative;
+          z-index:1;
+        }
       </style>
       ${image}
       <div class="card-body font-sans">
