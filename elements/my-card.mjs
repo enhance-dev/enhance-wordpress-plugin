@@ -1,6 +1,7 @@
 function MyCard({ html, state }) {
     const { attrs={} } = state
-    const { title='default' } = attrs
+    const { title='default', url } = attrs
+    const image = url ? `<img src="${url}" />` : ''
     return html`
       <style>
         :host {
@@ -30,7 +31,7 @@ function MyCard({ html, state }) {
             font-weight: 500;
         }
       </style>
-      <slot name="image"></slot>
+      ${image}
       <div class="card-body font-sans">
         <h5 class="card-title">${title}</h5>
         <slot></slot>

@@ -70,10 +70,7 @@
       // Save should be the authored/non-expanded html form of my-card (i.e. `<my-card>Hello World</my-card>`)
       save: function( props ) {
           let {title, content, imageUrl} = props.attributes
-          if (imageUrl) {
-            content = `<img src="${imageUrl}" slot="image"/>${content}`
-          }
-          return el( 'my-card', { title, dangerouslySetInnerHTML: { __html: content } } , null );
+          return el( 'my-card', { title, url: imageUrl, dangerouslySetInnerHTML: { __html: content } } , null );
       },
     }
   );
