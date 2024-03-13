@@ -30,4 +30,27 @@ function my_header_register_block() {
     ) );
 }
 
+function my_card_register_block() {
+    wp_register_script(
+        'my-card-block-editor-script',
+        plugins_url( '/custom-blocks/my-card.js', __FILE__ ),
+        array( 'wp-blocks', 'wp-element', 'wp-block-editor' ),
+        filemtime( plugin_dir_path( __FILE__ ) . '/custom-blocks/my-card.js' )
+    );
+
+    wp_register_style(
+        'my-card-block-editor-style',
+        plugins_url( '/custom-blocks/my-card.css', __FILE__ ),
+        array(),
+        filemtime( plugin_dir_path( __FILE__ ) . '/custom-blocks/my-card.css' )
+    );
+
+    register_block_type( 'enhance-blocks/my-card', array(
+        //'render_callback' => 'my_header_render_block', // server side rendering
+        'editor_script' => 'my-card-block-editor-script',
+        'editor_style'  => 'my-card-block-editor-style',
+    ) );
+}
+
 add_action( 'init', 'my_header_register_block' );
+add_action( 'init', 'my_card_register_block' );
