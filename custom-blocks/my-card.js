@@ -10,7 +10,8 @@
       attributes: {
         title: {
           type: 'string',
-          source: 'text',
+          source: 'attribute',
+          attribute: 'title',
           selector: 'my-card',
         },
         content: {
@@ -18,22 +19,23 @@
           source: 'html',
           selector: 'my-card',
         },
-        title: {
+        url: {
           type: 'string',
-          source: 'text',
-          selector: 'my-custom-image-url',
+          source: 'attribute',
+          attribute: 'url',
+          selector: 'my-card',
         },
       },
       edit: function( props ) {
-          var {title, content, imageUrl} = props.attributes;
+          var {title, content, url} = props.attributes;
           function onChangeTitle( newTitle ) {
             props.setAttributes( { title: newTitle } );
           }
           function onChangeContent( newContent ) {
             props.setAttributes( { content: newContent } );
           }
-          function onChangeImageUrl( newImageUrl ) {
-            props.setAttributes( { imageUrl: newImageUrl } );
+          function onChangeUrl( newUrl ) {
+            props.setAttributes( { url: newUrl } );
           }
 
           return el(
@@ -61,30 +63,17 @@
             el(
               PlainText,
               {
-                  value: imageUrl,
-                  onChange: onChangeImageUrl,
+                  value: url,
+                  onChange: onChangeUrl,
               }
             ),
           )
       },
       // Save should be the authored/non-expanded html form of my-card (i.e. `<my-card>Hello World</my-card>`)
       save: function( props ) {
-          let {title, content, imageUrl} = props.attributes
-          return el( 'my-card', { title, url: imageUrl, dangerouslySetInnerHTML: { __html: content } } , null );
+          let {title, content, url} = props.attributes
+          return el( 'my-card', { title, url, dangerouslySetInnerHTML: { __html: content } } , null );
       },
     }
   );
 } )( window.wp.blocks, window.wp.element, window.wp.blockEditor );
-
-/*
-            el(
-              RichText,
-              {
-                  tagName: 'span',
-                  className: 'my-custom-description',
-                  style: { },
-                  value: content,
-                  onChange: onChangeContent,
-              }
-            )
-            */
