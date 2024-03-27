@@ -149,7 +149,7 @@
             <svg class="edit-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
               <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828zM3 17a2 2 0 002 2h12a1 1 0 001-1v-1H5a2 2 0 01-2-2v-1H3v3z"/>
             </svg>
-            <input type="text" class="edit-input" name=content value=${attrs.content} />
+            <input type="text" class="edit-input" name=content value="${attrs.content}" />
           </label>
         </div>
           `
