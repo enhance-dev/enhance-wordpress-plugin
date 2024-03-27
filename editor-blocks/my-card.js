@@ -1,4 +1,4 @@
-;(function(blocks,useHtml) {
+; (function(blocks, useHtml) {
   useHtml.init('my-card')
 
   blocks.registerBlockType('my-components/my-card', {
@@ -27,7 +27,7 @@
     edit: function(props) {
       return useHtml.editWrap(props,
         {
-          name:'my-card',
+          name: 'my-card',
           attributeNames: ['content', 'title', 'url'],
           htmlTemplate: (attrs) => {
             return `
@@ -128,7 +128,7 @@
         }
 
         </style>
-        <img src='${attrs.url ||""}' />
+        <img src='${attrs.url || ""}' />
         <div class="card-body font-sans">
           <label class="icon-input">
             <svg class="edit-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -136,7 +136,7 @@
             </svg>
             <input type="text" class="edit-input" name=url value="${attrs.url}"/>
           </label>
-          <h5 class="card-title">${attrs.title||''}</h5>
+          <h5 class="card-title">${attrs.title || ''}</h5>
           <label class="icon-input">
             <svg class="edit-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
               <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828zM3 17a2 2 0 002 2h12a1 1 0 001-1v-1H5a2 2 0 01-2-2v-1H3v3z"/>
@@ -155,37 +155,36 @@
           `
           },
           listeners: [
-            (blockRoot,sendUpdate) => blockRoot.querySelector('input[name=title]').addEventListener('input', (event) => {
+            (blockRoot, sendUpdate) => blockRoot.querySelector('input[name=title]').addEventListener('input', (event) => {
               sendUpdate({ title: event.target.value });
             }),
-            (blockRoot,sendUpdate) => blockRoot.querySelector('input[name=title]').addEventListener('blur', (event) => {
+            (blockRoot, sendUpdate) => blockRoot.querySelector('input[name=title]').addEventListener('blur', (event) => {
               blockRoot.querySelector('h5').innerText = event.target.value
             }),
-            (blockRoot,sendUpdate) => blockRoot.querySelector('input[name=content]').addEventListener('input', (event) => {
+            (blockRoot, sendUpdate) => blockRoot.querySelector('input[name=content]').addEventListener('input', (event) => {
               sendUpdate({ content: event.target.value });
             }),
-            (blockRoot,sendUpdate) => blockRoot.querySelector('input[name=content]').addEventListener('blur', (event) => {
+            (blockRoot, sendUpdate) => blockRoot.querySelector('input[name=content]').addEventListener('blur', (event) => {
               blockRoot.querySelector('p').innerText = event.target.value
             }),
-            (blockRoot,sendUpdate) => blockRoot.querySelector('input[name=url]').addEventListener('input', (event) => {
+            (blockRoot, sendUpdate) => blockRoot.querySelector('input[name=url]').addEventListener('input', (event) => {
               sendUpdate({ url: event.target.value });
             }),
-            (blockRoot,sendUpdate) => blockRoot.querySelector('input[name=url]').addEventListener('blur', (event) => {
-              blockRoot.querySelector('img').setAttribute('src',event.target.value)
+            (blockRoot, sendUpdate) => blockRoot.querySelector('input[name=url]').addEventListener('blur', (event) => {
+              blockRoot.querySelector('img').setAttribute('src', event.target.value)
             })
           ]
         },
-        
+
       );
     },
     save: function(props) {
-      return useHtml.saveWrap(props,{
+      return useHtml.saveWrap(props, {
         tag: 'my-card',
-        attributes: { title: props.attributes?.title || '', url: props.attributes?.url || ''},
+        attributes: { title: props.attributes?.title || '', url: props.attributes?.url || '' },
         html: props.attributes?.content
       })
     },
   });
 
 })(window.wp.blocks, window.useHtml);
-
