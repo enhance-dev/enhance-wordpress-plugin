@@ -115,6 +115,14 @@
           transition: width 0.3s ease, opacity 0.3s ease;
           cursor: pointer;
         }
+         
+        .icon-input:not(:focus-within) {
+          opacity:50%;
+        }
+        label.icon-input:has(input:placeholder-shown) span.description {
+          display:inline;
+        }
+        span.description { display:none;}
 
         .icon-input:focus-within .edit-input {
           width: 150px; /* Expand input field */
@@ -130,26 +138,25 @@
         </style>
         <img src='${attrs.url || ""}' />
         <div class="card-body font-sans">
-          <label class="icon-input">
+          <label class="icon-input"><span class=description>Image URL:</span>
             <svg class="edit-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
               <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828zM3 17a2 2 0 002 2h12a1 1 0 001-1v-1H5a2 2 0 01-2-2v-1H3v3z"/>
             </svg>
-            <input type="text" class="edit-input" name=url value="${attrs.url}"/>
+            <input type="text" class="edit-input" name=url placeholder="image url" value="${attrs.url}"/>
           </label>
           <h5 class="card-title">${attrs.title || ''}</h5>
-          <label class="icon-input">
+          <label class="icon-input"><span class=description>Title:</span>
             <svg class="edit-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
               <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828zM3 17a2 2 0 002 2h12a1 1 0 001-1v-1H5a2 2 0 01-2-2v-1H3v3z"/>
             </svg>
-            <input type="text" class="edit-input" name=title value="${attrs.title}" />
+            <input type="text" class="edit-input" name=title placeholder="Title" value="${attrs.title}" />
           </label>
-
           <p class="card-text">${attrs.content || ''}</p>
-          <label class="icon-input">
+          <label class="icon-input"><span class=description>Description:</span>
             <svg class="edit-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
               <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828zM3 17a2 2 0 002 2h12a1 1 0 001-1v-1H5a2 2 0 01-2-2v-1H3v3z"/>
             </svg>
-            <input type="text" class="edit-input" name=content value="${attrs.content}" />
+            <input type="text" class="edit-input" name=content placeholder="description" value="${attrs.content}" />
           </label>
         </div>
           `
@@ -170,6 +177,14 @@
             (blockRoot, sendUpdate) => blockRoot.querySelector('input[name=url]').addEventListener('input', (event) => {
               sendUpdate({ url: event.target.value });
             }),
+            (blockRoot, sendUpdate) => blockRoot.querySelector('input[name=url]').addEventListener('paste', (event) => {
+              event.preventDefault();
+              const clipboardData = event.clipboardData || window.clipboardData;
+              console.log({ clipboardData })
+              const pastedText = clipboardData.getData('text');
+              console.log({ pastedText })
+              blockRoot.querySelector('input[name=url]').value = pastedText;
+            }),
             (blockRoot, sendUpdate) => blockRoot.querySelector('input[name=url]').addEventListener('blur', (event) => {
               blockRoot.querySelector('img').setAttribute('src', event.target.value)
             })
@@ -188,3 +203,4 @@
   });
 
 })(window.wp.blocks, window.useHtml);
+
