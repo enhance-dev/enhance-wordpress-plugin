@@ -3,23 +3,40 @@
 Plugin Name: Enhance SSR
 Plugin URI:  http://enhance.dev
 Description: This plugin server side renders Enhance components
-Version:     0.1
+Version:     0.0.1
 Author:      Ryan Bethel
 Author URI:  https://enhance.dev
 */
 
-require __DIR__ . '/ssr.php';
+require "./vendor/autoload.php";
+
+use Enhance\Enhancer;
+use Enhance\Elements;
+use Enhance\ShadyStyles;
+
+$elementPath = __DIR__ . "/../elements";
+$elements = new Elements($elementPath);
+$scopeMyStyle = new ShadyStyles();
+$enhance = new Enhancer([
+    "elements" => $elements,
+    "initialState" => [],
+    "styleTransforms" => [[$scopeMyStyle, "styleTransform"]],
+    "enhancedAttr" => true,
+    "bodyContent" => false,
+]);
 
 
 // Start output buffering and register the modification function
-function start_output_buffering() {
-    ob_start("enhance_it");
-}
-add_action('template_redirect', 'start_output_buffering');
+add_action('template_redirect', function() use ($enhance) {
+    ob_start(function($buffer) use ($enhance) {
+        return $enhance->ssr($buffer);
+    });
+});
+
 
 // Define the function to modify the HTML output
-function enhance_it($buffer) {
-    $buffer = enhance_ssr($buffer);
+function enhance_it($buffer)  {
+    $buffer = $enhance->ssr($buffer);
     return $buffer;
 }
 

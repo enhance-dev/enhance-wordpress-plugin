@@ -1,30 +1,29 @@
 {
-  "name": "enhance/enhance-wordpress",
-  "type": "project",
+  "name": "enhance-dev/enhance-wordpress-plugin",
+  "description": "A WordPress plugin that uses the Enhance SSR PHP library to render web components on the server",
+  "type": "wordpress-plugin",
+  "license": "Apache-2.0",
   "autoload": {
     "psr-4": {
-      "EnhanceSsrPhp\\": "/src"
+      "EnhanceWordpress\\": "/src"
     }
   },
   "authors": [
     {
-      "name": "ryanbethel",
-      "email": "ryan.bethel@gmail.com"
+      "name": "Ryan Bethel",
+      "email": "ryan.bethel@begin.com"
     }
   ],
   "minimum-stability": "dev",
   "require": {
-    "extism/extism": "dev-main"
+    "enhance-dev/ssr": "v0.0.1",
+    "composer/installers": "~1.0"
   },
-  "scripts": {
-    "post-install-cmd": [
-      "@composer addEnhanceSsrToVendor"
-    ],
-    "post-update-cmd": [
-      "@composer addEnhanceSsrToVendor"
-    ],
-    "addEnhanceSsrToVendor": [
-      "mkdir -p vendor/enhance/ssr-wasm && cd \"$_\" && curl -L https://github.com/enhance-dev/enhance-ssr-wasm/releases/download/v0.0.3/enhance-ssr.wasm.gz | gunzip > enhance-ssr.wasm"
-    ]
+  "extra": {
+    "installer-paths": {
+      "wp-content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ]
+    }
   }
 }
