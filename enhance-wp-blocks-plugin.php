@@ -3,7 +3,7 @@
 Plugin Name: Enhance components as Guetenburg blocks
 Plugin URI:  http://enhance.dev
 Description: This plugin is an example of wrapping an enhance component for use in the block editor.
-Version:     0.1
+Version:     v0.0.1
 Author:      Ryan Bethel
 Author URI:  https://enhance.dev
 */
