@@ -10,7 +10,7 @@ function MyCard({ html, state }) {
         </a>
         <dialog>
           <form method='dialog'>
-            <button class='close-button'>&times;</button>
+            <button class='close-button'>X</button>
           </form>
           <img src='${image}' />
         </dialog>`

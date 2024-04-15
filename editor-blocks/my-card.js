@@ -103,7 +103,7 @@
         }
 
         .edit-icon {
-          width: 20px; 
+          width: 20px;
           height: 20px;
         }
 
@@ -115,7 +115,7 @@
           transition: width 0.3s ease, opacity 0.3s ease;
           cursor: pointer;
         }
-         
+
         .icon-input:not(:focus-within) {
           opacity:50%;
         }
@@ -180,10 +180,9 @@
             (blockRoot, sendUpdate) => blockRoot.querySelector('input[name=url]').addEventListener('paste', (event) => {
               event.preventDefault();
               const clipboardData = event.clipboardData || window.clipboardData;
-              console.log({ clipboardData })
               const pastedText = clipboardData.getData('text');
-              console.log({ pastedText })
               blockRoot.querySelector('input[name=url]').value = pastedText;
+              sendUpdate({ url: pastedText });
             }),
             (blockRoot, sendUpdate) => blockRoot.querySelector('input[name=url]').addEventListener('blur', (event) => {
               blockRoot.querySelector('img').setAttribute('src', event.target.value)
