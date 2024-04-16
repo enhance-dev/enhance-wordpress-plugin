@@ -1,0 +1,17 @@
+<style scope="global">
+    /* Icon base styles */
+    e-icon {
+        display: inline-flex;
+
+        &::before {
+            font-family: "e-icons";
+            content: attr(name);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Filled option */
+        &[fill]::before {
+            font-variation-settings: "FILL" 1;
+        }
+    }
+</style>

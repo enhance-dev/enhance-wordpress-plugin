@@ -18,47 +18,47 @@ function plugin_enhance_custom_blocks() {
         array( 'wp-blocks', 'wp-element'),
         filemtime( plugin_dir_path( __FILE__ ) . 'use-html.js' )
     );
+    wp_register_style(
+        'e-global-style',
+        plugins_url( '/e-assets/e-global.css', __FILE__ ),
+        array(),
+        filemtime( plugin_dir_path( __FILE__ ) . '/e-assets/e-global.css' )
+    );
 
-    // Check if the directory exists
+    
+
     if (is_dir($dir)) {
-        // Scan the directory for files
         $files = scandir($dir);
 
-        // Check each file in the directory
         foreach ($files as $file) {
-            // Use pathinfo to get file extension and check if it's a .js file
             if (pathinfo($file, PATHINFO_EXTENSION) === 'js') {
-                // Construct a handle based on the file name (without extension)
                 $handle = pathinfo($file, PATHINFO_FILENAME) . '-block-editor-script';
 
-                // Register the script file with WordPress
                 wp_register_script(
                     $handle,
                     $url . $file,
-                    array('wp-blocks', 'wp-element','use-html-script'), 
-                    filemtime($dir . $file) // Version: file modification time for cache busting
+                    array('wp-blocks', 'wp-element','wp-block-editor', 'wp-components', 'use-html-script'), 
+                    filemtime($dir . $file) 
                 );
             }
             if (pathinfo($file, PATHINFO_EXTENSION) === 'css') {
-                // Construct a handle based on the file name (without extension)
                 $handle = pathinfo($file, PATHINFO_FILENAME) . '-block-editor-style';
 
-                // Register the script file with WordPress
                 wp_register_style(
                     $handle,
                     $url . $file,
                     array(), 
-                    filemtime($dir . $file) // Version: file modification time for cache busting
+                    filemtime($dir . $file) 
                 );
             }
         }
         foreach ($files as $file) {
-            // Use pathinfo to get file extension and check if it's a .js file
             if (pathinfo($file, PATHINFO_EXTENSION) === 'js') {
-              register_block_type( 'enhance-blocks/' . pathinfo($file, PATHINFO_FILENAME), array(
+              register_block_type( 'e-components/' . pathinfo($file, PATHINFO_FILENAME), array(
                   //'render_callback' => 'my_header_render_block', // server side rendering
                   'editor_script' => pathinfo($file, PATHINFO_FILENAME) . '-block-editor-script',
                   'editor_style'  => pathinfo($file, PATHINFO_FILENAME) . '-block-editor-style',
+                  'style'  => 'e-global-style',
               ) );
             }
         }
