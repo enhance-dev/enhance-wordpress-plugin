@@ -7,16 +7,6 @@ Version:     v0.0.2
 Author:      Ryan Bethel
 Author URI:  https://enhance.dev
 */
-// function htm_editor_script() {
-// $htm_path = '/node_modules/htm/dist/htm.js';
-// wp_enqueue_script(
-// 'htm',
-// plugins_url( '/node_modules/htm/dist/htm.js', __FILE__ ),
-// array(),
-// filemtime( plugin_dir_path( __FILE__ ) . $htm_path )
-// );
-// }
-// add_action( 'enqueue_block_editor_assets', 'htm_editor_script', 0 );
 
 function plugin_enhance_custom_blocks() {
 	$dir = plugin_dir_path( __FILE__ ) . '/editor-blocks/';
