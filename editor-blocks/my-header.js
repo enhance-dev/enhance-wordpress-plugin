@@ -184,30 +184,30 @@
 
 
 
-;(function(blocks,unReact) {
-  unReact.init('en-header')
+;(function(blocks,useHtml) {
+  useHtml.init('my-header')
 
-  blocks.registerBlockType('en-components/en-header', {
-    title: 'En Header',
+  blocks.registerBlockType('e-components/my-header', {
+    title: 'My Header',
     icon: 'heading',
     category: 'layout',
     attributes: {
       content: {
         type: 'string',
         source: 'text',
-        selector: 'new-header',
+        selector: 'my-header',
       },
       something: {
         type: 'string',
         source: 'attribute',
         attribute: 'something',
-        selector: 'en-header',
+        selector: 'my-header',
       },
     },
     edit: function(props) {
-      return unReact.editWrap(props,
+      return useHtml.editWrap(props,
         {
-          name:'en-header',
+          name:'my-header',
           attributeNames: ['content', 'something'],
           htmlTemplate: (attrs) => {
             return `
@@ -236,13 +236,13 @@
       );
     },
     save: function(props) {
-      return unReact.saveWrap(props,{
-        tag: 'en-header',
+      return useHtml.saveWrap(props,{
+        tag: 'my-header',
         attributes: { something: props.attributes?.something || 'nothing' },
         html: props.attributes?.content
       })
     },
   });
 
-})(window.wp.blocks, window.unReact);
+})(window.wp.blocks, window.useHtml);
 

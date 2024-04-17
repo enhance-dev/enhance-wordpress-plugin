@@ -1,0 +1,69 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "5a29b9200e3cb080913581f7f76c429d",
+    "packages": [
+        {
+            "name": "extism/extism",
+            "version": "dev-feat/update-ffi",
+            "dist": {
+                "type": "path",
+                "url": "..",
+                "reference": "1648699bab5ebf14d5388579b172b1ff41ad7f84"
+            },
+            "require": {
+                "php": "^7.4 || ^8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Extism\\": "src/"
+                },
+                "files": [
+                    "src/Manifest.php",
+                    "src/Plugin.php"
+                ]
+            },
+            "autoload-dev": {
+                "psr-4": []
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "The Extism Authors",
+                    "email": "oss@extism.org",
+                    "homepage": "https://extism.org"
+                },
+                {
+                    "name": "Dylibso, Inc.",
+                    "email": "oss@dylib.so",
+                    "homepage": "https://dylib.so"
+                }
+            ],
+            "description": "Make your software programmable. Run WebAssembly extensions in your app using the first off-the-shelf, universal plug-in system.",
+            "keywords": [
+                "WebAssembly",
+                "plug-in",
+                "plugin-system",
+                "runtime"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}

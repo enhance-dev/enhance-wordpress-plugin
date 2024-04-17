@@ -7,8 +7,10 @@
 # you can delete this whole section/until Configuration.
 .DS_Store
 .env
-composer.lock
-/vendor/
+# /dist/
+# package-lock.json
+# composer.lock
+# /vendor/
 /wp-admin/
 /wp-content/index.php
 /wp-content/languages

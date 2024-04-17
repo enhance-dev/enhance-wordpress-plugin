@@ -1,0 +1,6 @@
+.phpunit.result.cache
+/composer.lock
+**/vendor/
+src/ExtismLib.php
+example/php_errors.log
+php_errors.log

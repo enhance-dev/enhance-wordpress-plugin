@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "build:htm": "rollup -c"
+  },
+  "dependencies": {
+    "htm": "^3.1.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "rollup": "^2.79.1"
+  }
+}

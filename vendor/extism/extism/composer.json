@@ -1,0 +1,54 @@
+{
+  "name": "extism/extism",
+  "description": "Make your software programmable. Run WebAssembly extensions in your app using the first off-the-shelf, universal plug-in system.",
+  "license": "BSD-3-Clause",
+  "type": "library",
+  "keywords": [
+    "WebAssembly",
+    "plugin-system",
+    "runtime",
+    "plug-in",
+    "wasm",
+    "framework"
+  ],
+  "authors": [
+    {
+      "name": "The Extism Authors",
+      "email": "oss@extism.org",
+      "homepage": "https://extism.org"
+    },
+    {
+      "name": "Dylibso, Inc.",
+      "email": "oss@dylibso.com",
+      "homepage": "https://dylibso.com"
+    }
+  ],
+  "require": {
+    "php": "^7.4 || ^8"
+  },
+  "suggest": {},
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "Extism\\": "src/"
+    },
+    "files": [
+      "src/Manifest.php",
+      "src/Plugin.php",
+      "src/CurrentPlugin.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {}
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {},
+  "scripts": {},
+  "scripts-descriptions": {},
+  "require-dev": {
+    "phpunit/phpunit": "^10"
+  }
+}

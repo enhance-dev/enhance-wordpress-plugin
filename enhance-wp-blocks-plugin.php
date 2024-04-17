@@ -7,6 +7,16 @@ Version:     v0.0.2
 Author:      Ryan Bethel
 Author URI:  https://enhance.dev
 */
+// function htm_editor_script() {
+//     $htm_path = '/node_modules/htm/dist/htm.js';
+// 	wp_enqueue_script(
+// 		'htm',
+// 		plugins_url( '/node_modules/htm/dist/htm.js', __FILE__ ),
+// 		array(),
+// 		// filemtime( plugin_dir_path( __FILE__ ) . $htm_path )
+// 	);
+// }
+// add_action( 'enqueue_block_editor_assets', 'htm_editor_script', 0 );
 
 function plugin_enhance_custom_blocks() {
     $dir = plugin_dir_path(__FILE__) . '/editor-blocks/'; 
@@ -18,6 +28,20 @@ function plugin_enhance_custom_blocks() {
         array( 'wp-blocks', 'wp-element'),
         filemtime( plugin_dir_path( __FILE__ ) . 'use-html.js' )
     );
+
+    wp_register_script(
+        'htm',
+     		plugins_url( 'dist/htm.bundle.js', __FILE__ ),
+        array(),
+        filemtime( plugin_dir_path( __FILE__ ) . 'use-html.js' )
+    );
+    wp_register_script(
+        'htm-script',
+        plugins_url( 'dist/htm.bundle.js', __FILE__ ),
+        array( 'wp-blocks', 'wp-element'),
+        filemtime( plugin_dir_path( __FILE__ ) . 'dist/htm.bundle.js' )
+    );
+
     wp_register_style(
         'e-global-style',
         plugins_url( '/e-assets/e-global.css', __FILE__ ),
@@ -37,7 +61,8 @@ function plugin_enhance_custom_blocks() {
                 wp_register_script(
                     $handle,
                     $url . $file,
-                    array('wp-blocks', 'wp-element','wp-block-editor', 'wp-components', 'use-html-script'), 
+                    // array('wp-blocks', 'wp-element','wp-block-editor', 'wp-components', 'use-html-script', 'htm-script'), 
+                    array('wp-blocks', 'wp-element','wp-block-editor', 'wp-components', 'use-html-script', 'htm'), 
                     filemtime($dir . $file) 
                 );
             }

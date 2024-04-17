@@ -1,4 +1,4 @@
-.wp-block-e-components-e-tag e-tag {
+/*.wp-block-e-components-e-tag e-tag-none {
     display: inline-flex;
     align-items: center;
     color: var(--color, currentColor);
@@ -11,10 +11,9 @@
         margin-left: 3px;
     }
 
-    /* Removable tag */
     & button[type="remove"] {
         padding-left: var(--e-space-xs);
         font-size: var(--e-font-size-default);
         width: auto;
     }
-}
+}*/

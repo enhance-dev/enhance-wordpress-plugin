@@ -1,7 +1,7 @@
 ; (function(blocks, useHtml) {
   useHtml.init('my-card')
 
-  blocks.registerBlockType('my-components/my-card', {
+  blocks.registerBlockType('e-components/my-card', {
     title: 'My Card',
     icon: 'heading',
     category: 'layout',
