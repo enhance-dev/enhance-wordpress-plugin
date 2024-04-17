@@ -20,17 +20,17 @@
           setAttributes({ content: newContent });
         };
 
-        return html`
+        return (html`
 				<${RichText}
-				tagName     = "p"
-				value       = ${attributes.content}
-				onChange    = ${onChangeContent}
-				placeholder = "Enter your content here..."
+				tagName="p"
+				value=${attributes.content}
+				onChange=${onChangeContent}
+				placeholder="Enter your content here..."
 				/>
-				`
+				`)
       },
       save: ({ attributes }) => {
-        return html`<e-tag>${attributes.content}</e-tag>`;
+        return (html`<e-tag>${attributes.content}</e-tag>`);
       },
     }
   );
