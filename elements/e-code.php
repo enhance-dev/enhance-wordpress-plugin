@@ -1,12 +1,12 @@
 <?php
 
-function ECode($state) {
-  $attrs = $state["attrs"];
-  $format = $attrs["format"] ?? "inline";
-  $wrapper = $format==='inline' ?
-     "<code><slot></slot></code>" :
-     "<pre><slot></slot></pre>";
-  return <<<HTMLDOC
+function ECode( $state ) {
+	$attrs   = $state['attrs'];
+	$format  = $attrs['format'] ?? 'inline';
+	$wrapper = $format === 'inline' ?
+	'<code><slot></slot></code>' :
+	'<pre><slot></slot></pre>';
+	return <<<HTMLDOC
     <style scope="global">
       /* Base code styles */
       e-code {

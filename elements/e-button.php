@@ -1,15 +1,26 @@
 <?php
 
-function EButton($state) {
-  $attrs = $state["attrs"];
-  $topLevelAttrs = ["class"];
-  $innerAttrs = array_filter($attrs, function($key) use ($topLevelAttrs) {
-    return !in_array($key, $topLevelAttrs);
-  }, ARRAY_FILTER_USE_KEY);
-  $innerAttrsString = implode(' ', array_map(function($key, $value) {
-    return $key . '="' . $value . '"';
-  }, array_keys($innerAttrs), $innerAttrs));
-  return <<<HTMLDOC
+function EButton( $state ) {
+	$attrs            = $state['attrs'];
+	$topLevelAttrs    = array( 'class' );
+	$innerAttrs       = array_filter(
+		$attrs,
+		function ( $key ) use ( $topLevelAttrs ) {
+			return ! in_array( $key, $topLevelAttrs );
+		},
+		ARRAY_FILTER_USE_KEY
+	);
+	$innerAttrsString = implode(
+		' ',
+		array_map(
+			function ( $key, $value ) {
+				return $key . '="' . $value . '"';
+			},
+			array_keys( $innerAttrs ),
+			$innerAttrs
+		)
+	);
+	return <<<HTMLDOC
     <style scope="global">
       e-button {
         display: inline-block;

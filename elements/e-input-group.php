@@ -1,11 +1,11 @@
 <?php
 
-function EInputGroup($state) {
-  $attrs = $state["attrs"] ?? [];
-  $fieldClass = $attrs['field-class'] ?? '';
-  $fieldClassString = $fieldClass ?  "class=\"{$fieldClass}\""  : '';
+function EInputGroup( $state ) {
+	$attrs            = $state['attrs'] ?? array();
+	$fieldClass       = $attrs['field-class'] ?? '';
+	$fieldClassString = $fieldClass ? "class=\"{$fieldClass}\"" : '';
 
-  return <<<HTMLDOC
+	return <<<HTMLDOC
 <style scope=global>
  e-input-group { 
   display: block;

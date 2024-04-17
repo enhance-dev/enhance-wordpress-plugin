@@ -1,12 +1,12 @@
 <?php
-function EAlert($state) {
-  $attrs = $state["attrs"] ?? [];
-  $dismissible = $attrs["dismissible"] !== "false";
-  $type = $attrs["type"] ?? '';
-  $alert = $type === "warn" || $type === "error";
-  $dismissableString = $dismissible ? '<e-button type=remove aria-label="Dismiss Alert" ></e-button>'
-      : "";
-  return <<<HTMLDOC
+function EAlert( $state ) {
+	$attrs             = $state['attrs'] ?? array();
+	$dismissible       = $attrs['dismissible'] !== 'false';
+	$type              = $attrs['type'] ?? '';
+	$alert             = $type === 'warn' || $type === 'error';
+	$dismissableString = $dismissible ? '<e-button type=remove aria-label="Dismiss Alert" ></e-button>'
+		: '';
+	return <<<HTMLDOC
     <style scope="global">
       /* Base styles */
       e-alert {

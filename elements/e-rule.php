@@ -1,12 +1,12 @@
 <?php
 
-function ERule($state) {
-  $attrs = $state["attrs"] ?? [];
-  $orientation = $attrs["orientation"] ?? '';
-  $isVertical = $orientation === 'vertical';
+function ERule( $state ) {
+	$attrs       = $state['attrs'] ?? array();
+	$orientation = $attrs['orientation'] ?? '';
+	$isVertical  = $orientation === 'vertical';
 
-  $hr = $isVertical ? "<hr/>" : '<hr aria-orientation="vertical" />';
-return <<<HTMLDOC
+	$hr = $isVertical ? '<hr/>' : '<hr aria-orientation="vertical" />';
+	return <<<HTMLDOC
     <style scope=global>
       e-rule { 
         display: block 

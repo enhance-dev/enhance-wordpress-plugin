@@ -1,14 +1,13 @@
 <?php
 
 function MyCard( $state ) {
-  $attrs = $state['attrs'];
-  $title = $attrs['title'] ?? 'Default Title';
-  $url = $attrs['url'] ?? '';
+	$attrs = $state['attrs'];
+	$title = $attrs['title'] ?? 'Default Title';
+	$url   = $attrs['url'] ?? '';
 
-
-    function createImageTag($image) {
-      if ($image) {
-        return <<<IMAGE
+	function createImageTag( $image ) {
+		if ( $image ) {
+			return <<<IMAGE
         <a href="{$image}">
           <img src="{$image}" class="card-img" />
         </a>
@@ -19,14 +18,14 @@ function MyCard( $state ) {
           <img src="{$image}" />
         </dialog>
 IMAGE;
-    } else {
-        return '';
+		} else {
+			return '';
 
-    }
-  }
-    $imageTag = createImageTag($url);
+		}
+	}
+	$imageTag = createImageTag( $url );
 
-    return <<<HTML
+	return <<<HTML
       <style>
         :host {
             position: relative;

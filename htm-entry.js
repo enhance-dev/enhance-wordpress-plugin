@@ -1,2 +1,2 @@
 import htm from 'htm';
-window.HTM = htm; 
+window.HTM = htm;

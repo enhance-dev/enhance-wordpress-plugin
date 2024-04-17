@@ -1,15 +1,26 @@
 <?php
 
-function ESwitch($state) {
-  $attrs = $state["attrs"];
-  $topLevelAttrs = ['class','is','checkbox'];
-  $innerAttrs = array_filter($attrs, function($key) use ($topLevelAttrs) {
-    return !in_array($key, $topLevelAttrs);
-  }, ARRAY_FILTER_USE_KEY);
-  $innerAttrsString = implode(' ', array_map(function($key, $value) {
-    return $key . '="' . $value . '"';
-  }, array_keys($innerAttrs), $innerAttrs));
-  return <<<HTMLDOC
+function ESwitch( $state ) {
+	$attrs            = $state['attrs'];
+	$topLevelAttrs    = array( 'class', 'is', 'checkbox' );
+	$innerAttrs       = array_filter(
+		$attrs,
+		function ( $key ) use ( $topLevelAttrs ) {
+			return ! in_array( $key, $topLevelAttrs );
+		},
+		ARRAY_FILTER_USE_KEY
+	);
+	$innerAttrsString = implode(
+		' ',
+		array_map(
+			function ( $key, $value ) {
+				return $key . '="' . $value . '"';
+			},
+			array_keys( $innerAttrs ),
+			$innerAttrs
+		)
+	);
+	return <<<HTMLDOC
   <style scope=global>
     e-switch {
       /* Base switch styles */
@@ -55,5 +66,5 @@ function ESwitch($state) {
   </style>
   <input is=switch type=checkbox {$innerAttrsString}>
 
-  HTMLDOC;
+HTMLDOC;
 }
