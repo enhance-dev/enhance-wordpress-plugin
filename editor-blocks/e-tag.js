@@ -6,8 +6,8 @@
     'e-components/e-tag',
     {
       title: 'e-tag',
-      icon: 'universal-access-alt',
-      category: 'layout',
+      icon: 'tag',
+      category: 'e_components',
       attributes: {
         content: {
           type: 'string',
@@ -22,7 +22,7 @@
 
         return (html`
 				<${RichText}
-				tagName="p"
+				tagName="e-tag"
 				value=${attributes.content}
 				onChange=${onChangeContent}
 				placeholder="Enter your content here..."

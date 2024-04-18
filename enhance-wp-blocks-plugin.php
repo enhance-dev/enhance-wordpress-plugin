@@ -8,6 +8,21 @@ Author:      Ryan Bethel
 Author URI:  https://enhance.dev
 */
 
+function e_components_block_category( $categories, $post ) {
+    return array_merge(
+        $categories,
+        array(
+            array(
+                'slug'  => 'e_components',
+                'title' => 'Enhance E-Components',
+                'icon'  => 'wordpress',  
+            ),
+        )
+    );
+}
+add_filter( 'block_categories_all', 'e_components_block_category', 1, 2 );
+
+
 function plugin_enhance_custom_blocks() {
 	$dir = plugin_dir_path( __FILE__ ) . '/editor-blocks/';
 	$url = plugin_dir_url( __FILE__ ) . '/editor-blocks/';
@@ -49,7 +64,6 @@ function plugin_enhance_custom_blocks() {
 				wp_register_script(
 					$handle,
 					$url . $file,
-					// array('wp-blocks', 'wp-element','wp-block-editor', 'wp-components', 'use-html-script', 'htm-script'),
 					array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'use-html-script', 'htm' ),
 					filemtime( $dir . $file )
 				);
