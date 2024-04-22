@@ -232,17 +232,17 @@
         },
         {
             "name": "enhance-dev/ssr",
-            "version": "v0.0.2",
-            "version_normalized": "0.0.2.0",
+            "version": "v0.0.4",
+            "version_normalized": "0.0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/enhance-dev/enhance-ssr-php.git",
-                "reference": "0a5a2a8bfa05139357dcd1412aacb721e59a66ed"
+                "reference": "081099cccf273f09b10b0ea066db861add8aeb1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/enhance-dev/enhance-ssr-php/zipball/0a5a2a8bfa05139357dcd1412aacb721e59a66ed",
-                "reference": "0a5a2a8bfa05139357dcd1412aacb721e59a66ed",
+                "url": "https://api.github.com/repos/enhance-dev/enhance-ssr-php/zipball/081099cccf273f09b10b0ea066db861add8aeb1f",
+                "reference": "081099cccf273f09b10b0ea066db861add8aeb1f",
                 "shasum": ""
             },
             "require": {
@@ -250,9 +250,10 @@
                 "sabberworm/php-css-parser": "^9.0@dev"
             },
             "require-dev": {
-                "phpunit/phpunit": "^11.1@dev"
+                "phpunit/phpunit": "^11.1@dev",
+                "squizlabs/php_codesniffer": "*"
             },
-            "time": "2024-04-17T16:13:37+00:00",
+            "time": "2024-04-22T15:55:39+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -273,7 +274,7 @@
             "description": "A PHP library for server-side rendering with Enhance",
             "support": {
                 "issues": "https://github.com/enhance-dev/enhance-ssr-php/issues",
-                "source": "https://github.com/enhance-dev/enhance-ssr-php/tree/v0.0.2"
+                "source": "https://github.com/enhance-dev/enhance-ssr-php/tree/v0.0.4"
             },
             "install-path": "../enhance-dev/ssr"
         },
@@ -350,12 +351,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHPCSExtra.git",
-                "reference": "253d01850056b24a0bc2eeab1b18697a98960bc0"
+                "reference": "cd881d335cc475cc46edf7d65a324607915f3da7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHPCSExtra/zipball/253d01850056b24a0bc2eeab1b18697a98960bc0",
-                "reference": "253d01850056b24a0bc2eeab1b18697a98960bc0",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHPCSExtra/zipball/cd881d335cc475cc46edf7d65a324607915f3da7",
+                "reference": "cd881d335cc475cc46edf7d65a324607915f3da7",
                 "shasum": ""
             },
             "require": {
@@ -370,7 +371,7 @@
                 "phpcsstandards/phpcsdevtools": "^1.2.1",
                 "phpunit/phpunit": "^4.5 || ^5.0 || ^6.0 || ^7.0 || ^8.0 || ^9.0"
             },
-            "time": "2024-03-18T03:02:00+00:00",
+            "time": "2024-04-21T18:24:34+00:00",
             "default-branch": true,
             "type": "phpcodesniffer-standard",
             "extra": {
@@ -432,12 +433,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHPCSUtils.git",
-                "reference": "66b40ac1d24b156e44386a449fa34982f0dc9857"
+                "reference": "1f74f80b8bdde3737c62bd1474a31de6b35d8f0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHPCSUtils/zipball/66b40ac1d24b156e44386a449fa34982f0dc9857",
-                "reference": "66b40ac1d24b156e44386a449fa34982f0dc9857",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHPCSUtils/zipball/1f74f80b8bdde3737c62bd1474a31de6b35d8f0d",
+                "reference": "1f74f80b8bdde3737c62bd1474a31de6b35d8f0d",
                 "shasum": ""
             },
             "require": {
@@ -452,7 +453,7 @@
                 "phpcsstandards/phpcsdevcs": "^1.1.6",
                 "yoast/phpunit-polyfills": "^1.1.0 || ^2.0.0"
             },
-            "time": "2024-04-08T09:07:53+00:00",
+            "time": "2024-04-21T18:36:31+00:00",
             "default-branch": true,
             "type": "phpcodesniffer-standard",
             "extra": {
@@ -597,12 +598,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
-                "reference": "30b3148b302aaba28d72bdb2432b144ff9d47751"
+                "reference": "8d2363ddb3ef8039d330b4e503ca022b9b7bc298"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/30b3148b302aaba28d72bdb2432b144ff9d47751",
-                "reference": "30b3148b302aaba28d72bdb2432b144ff9d47751",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/8d2363ddb3ef8039d330b4e503ca022b9b7bc298",
+                "reference": "8d2363ddb3ef8039d330b4e503ca022b9b7bc298",
                 "shasum": ""
             },
             "require": {
@@ -614,7 +615,7 @@
             "require-dev": {
                 "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0 || ^8.0 || ^9.3.4"
             },
-            "time": "2024-04-15T00:54:15+00:00",
+            "time": "2024-04-22T15:30:49+00:00",
             "default-branch": true,
             "bin": [
                 "bin/phpcbf",

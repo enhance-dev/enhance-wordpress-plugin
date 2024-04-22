@@ -4,7 +4,7 @@ function EAlert( $state ) {
 	$dismissible       = $attrs['dismissible'] !== 'false';
 	$type              = $attrs['type'] ?? '';
 	$alert             = $type === 'warn' || $type === 'error';
-	$dismissableString = $dismissible ? '<e-button type=remove aria-label="Dismiss Alert" ></e-button>'
+	$dismissibleString = $dismissible ? '<e-button type=remove aria-label="Dismiss Alert" ></e-button>'
 		: '';
 	return <<<HTMLDOC
     <style scope="global">
@@ -71,7 +71,7 @@ function EAlert( $state ) {
     {$dismissibleString}
 
     <script type="module">
-      class Alert extends HTMLElement {
+      class EAlert extends HTMLElement {
         constructor() {
           super();
           this.dismiss = this.dismiss.bind(this);
@@ -101,7 +101,7 @@ function EAlert( $state ) {
           this.remove();
         }
       }
-      customElements.define("e-alert", Alert);
+      customElements.define("e-alert", EAlert);
     </script>
 HTMLDOC;
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c8ad9b1285657ff06f06944cd22fe45",
+    "content-hash": "7d969f2f57bfeba6d6b3e46afe9b6165",
     "packages": [
         {
             "name": "composer/installers",
@@ -154,16 +154,16 @@
         },
         {
             "name": "enhance-dev/ssr",
-            "version": "v0.0.2",
+            "version": "v0.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/enhance-dev/enhance-ssr-php.git",
-                "reference": "0a5a2a8bfa05139357dcd1412aacb721e59a66ed"
+                "reference": "081099cccf273f09b10b0ea066db861add8aeb1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/enhance-dev/enhance-ssr-php/zipball/0a5a2a8bfa05139357dcd1412aacb721e59a66ed",
-                "reference": "0a5a2a8bfa05139357dcd1412aacb721e59a66ed",
+                "url": "https://api.github.com/repos/enhance-dev/enhance-ssr-php/zipball/081099cccf273f09b10b0ea066db861add8aeb1f",
+                "reference": "081099cccf273f09b10b0ea066db861add8aeb1f",
                 "shasum": ""
             },
             "require": {
@@ -171,7 +171,8 @@
                 "sabberworm/php-css-parser": "^9.0@dev"
             },
             "require-dev": {
-                "phpunit/phpunit": "^11.1@dev"
+                "phpunit/phpunit": "^11.1@dev",
+                "squizlabs/php_codesniffer": "*"
             },
             "type": "library",
             "autoload": {
@@ -192,9 +193,9 @@
             "description": "A PHP library for server-side rendering with Enhance",
             "support": {
                 "issues": "https://github.com/enhance-dev/enhance-ssr-php/issues",
-                "source": "https://github.com/enhance-dev/enhance-ssr-php/tree/v0.0.2"
+                "source": "https://github.com/enhance-dev/enhance-ssr-php/tree/v0.0.4"
             },
-            "time": "2024-04-17T16:13:37+00:00"
+            "time": "2024-04-22T15:55:39+00:00"
         },
         {
             "name": "extism/extism",
@@ -415,12 +416,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHPCSExtra.git",
-                "reference": "253d01850056b24a0bc2eeab1b18697a98960bc0"
+                "reference": "cd881d335cc475cc46edf7d65a324607915f3da7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHPCSExtra/zipball/253d01850056b24a0bc2eeab1b18697a98960bc0",
-                "reference": "253d01850056b24a0bc2eeab1b18697a98960bc0",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHPCSExtra/zipball/cd881d335cc475cc46edf7d65a324607915f3da7",
+                "reference": "cd881d335cc475cc46edf7d65a324607915f3da7",
                 "shasum": ""
             },
             "require": {
@@ -486,7 +487,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-03-18T03:02:00+00:00"
+            "time": "2024-04-21T18:24:34+00:00"
         },
         {
             "name": "phpcsstandards/phpcsutils",
@@ -494,12 +495,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHPCSUtils.git",
-                "reference": "66b40ac1d24b156e44386a449fa34982f0dc9857"
+                "reference": "1f74f80b8bdde3737c62bd1474a31de6b35d8f0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHPCSUtils/zipball/66b40ac1d24b156e44386a449fa34982f0dc9857",
-                "reference": "66b40ac1d24b156e44386a449fa34982f0dc9857",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHPCSUtils/zipball/1f74f80b8bdde3737c62bd1474a31de6b35d8f0d",
+                "reference": "1f74f80b8bdde3737c62bd1474a31de6b35d8f0d",
                 "shasum": ""
             },
             "require": {
@@ -575,7 +576,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-04-08T09:07:53+00:00"
+            "time": "2024-04-21T18:36:31+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -583,12 +584,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
-                "reference": "30b3148b302aaba28d72bdb2432b144ff9d47751"
+                "reference": "8d2363ddb3ef8039d330b4e503ca022b9b7bc298"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/30b3148b302aaba28d72bdb2432b144ff9d47751",
-                "reference": "30b3148b302aaba28d72bdb2432b144ff9d47751",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/8d2363ddb3ef8039d330b4e503ca022b9b7bc298",
+                "reference": "8d2363ddb3ef8039d330b4e503ca022b9b7bc298",
                 "shasum": ""
             },
             "require": {
@@ -656,7 +657,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-04-15T00:54:15+00:00"
+            "time": "2024-04-22T15:30:49+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",

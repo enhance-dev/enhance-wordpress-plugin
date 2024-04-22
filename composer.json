@@ -16,7 +16,7 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "enhance-dev/ssr": "~v0.0.2",
+    "enhance-dev/ssr": "~v0.0.4",
     "composer/installers": "^2.2"
   },
   "extra": {

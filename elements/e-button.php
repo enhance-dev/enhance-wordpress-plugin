@@ -6,7 +6,7 @@ function EButton( $state ) {
 	$innerAttrs       = array_filter(
 		$attrs,
 		function ( $key ) use ( $topLevelAttrs ) {
-			return ! in_array( $key, $topLevelAttrs );
+			return !in_array( $key, $topLevelAttrs );
 		},
 		ARRAY_FILTER_USE_KEY
 	);
@@ -176,7 +176,7 @@ function EButton( $state ) {
         /*}*/
       }
     </style>
-    <button {$innerAttrsString}>
+    <button {$innerAttrsString} >
       <slot></slot>
     </button>
 HTMLDOC;

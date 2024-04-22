@@ -23,6 +23,18 @@ function e_components_block_category( $categories, $post ) {
 add_filter( 'block_categories_all', 'e_components_block_category', 1, 2 );
 
 
+function enqueue_e_component_styles() {
+	wp_register_style(
+		'e-global-style',
+		plugins_url( '/e-assets/e-global.css', __FILE__ ),
+		array(),
+		filemtime( plugin_dir_path( __FILE__ ) . '/e-assets/e-global.css' )
+	);
+    wp_enqueue_style('e-global-style');
+}
+add_action('wp_enqueue_scripts', 'enqueue_e_component_styles');
+
+
 function plugin_enhance_custom_blocks() {
 	$dir = plugin_dir_path( __FILE__ ) . '/editor-blocks/';
 	$url = plugin_dir_url( __FILE__ ) . '/editor-blocks/';
@@ -47,12 +59,6 @@ function plugin_enhance_custom_blocks() {
 		filemtime( plugin_dir_path( __FILE__ ) . 'dist/htm.bundle.js' )
 	);
 
-	wp_register_style(
-		'e-global-style',
-		plugins_url( '/e-assets/e-global.css', __FILE__ ),
-		array(),
-		filemtime( plugin_dir_path( __FILE__ ) . '/e-assets/e-global.css' )
-	);
 
 	if ( is_dir( $dir ) ) {
 		$files = scandir( $dir );

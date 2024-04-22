@@ -3,7 +3,7 @@
         'name' => 'enhance-dev/enhance-wordpress-plugin',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '154ed6171a3252d946ce39ca1ff53575f2b343f2',
+        'reference' => 'f8ba33265c625043b483676c0a8b2b8caaf4192c',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -33,16 +33,16 @@
         'enhance-dev/enhance-wordpress-plugin' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '154ed6171a3252d946ce39ca1ff53575f2b343f2',
+            'reference' => 'f8ba33265c625043b483676c0a8b2b8caaf4192c',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
         'enhance-dev/ssr' => array(
-            'pretty_version' => 'v0.0.2',
-            'version' => '0.0.2.0',
-            'reference' => '0a5a2a8bfa05139357dcd1412aacb721e59a66ed',
+            'pretty_version' => 'v0.0.4',
+            'version' => '0.0.4.0',
+            'reference' => '081099cccf273f09b10b0ea066db861add8aeb1f',
             'type' => 'library',
             'install_path' => __DIR__ . '/../enhance-dev/ssr',
             'aliases' => array(),
@@ -62,7 +62,7 @@
         'phpcsstandards/phpcsextra' => array(
             'pretty_version' => 'dev-develop',
             'version' => 'dev-develop',
-            'reference' => '253d01850056b24a0bc2eeab1b18697a98960bc0',
+            'reference' => 'cd881d335cc475cc46edf7d65a324607915f3da7',
             'type' => 'phpcodesniffer-standard',
             'install_path' => __DIR__ . '/../phpcsstandards/phpcsextra',
             'aliases' => array(
@@ -73,7 +73,7 @@
         'phpcsstandards/phpcsutils' => array(
             'pretty_version' => 'dev-develop',
             'version' => 'dev-develop',
-            'reference' => '66b40ac1d24b156e44386a449fa34982f0dc9857',
+            'reference' => '1f74f80b8bdde3737c62bd1474a31de6b35d8f0d',
             'type' => 'phpcodesniffer-standard',
             'install_path' => __DIR__ . '/../phpcsstandards/phpcsutils',
             'aliases' => array(
@@ -95,7 +95,7 @@
         'squizlabs/php_codesniffer' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '30b3148b302aaba28d72bdb2432b144ff9d47751',
+            'reference' => '8d2363ddb3ef8039d330b4e503ca022b9b7bc298',
             'type' => 'library',
             'install_path' => __DIR__ . '/../squizlabs/php_codesniffer',
             'aliases' => array(
