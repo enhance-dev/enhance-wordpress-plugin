@@ -14,10 +14,11 @@
       category: 'e_components',
       attributes: {
         dismissible: {
-          type: 'string',
+          type: 'boolean',
           attribute: 'dismissible',
           source: 'attribute',
           selector: 'e-alert',
+          default: true,
         },
         type: {
           type: 'string',
@@ -30,8 +31,11 @@
       edit: ({ attributes, setAttributes }) => {
         console.log("edit attributes: ", attributes);
         const dismissible = attributes.dismissible
-        const isDismissible = (dismissible && dismissible !== 'false') || dismissible === ''
-        const toggleDismiss = () => setAttributes({ dismissible: !isDismissible })
+        const toggleDismiss = () => {
+          console.log("toggle attributes before: ", attributes);
+          setAttributes({ dismissible: !dismissible })
+          console.log("toggle attributes after: ", attributes);
+        }
         return (html`
           <${InspectorControls}>
             <${Panel} header="My Panel">
@@ -50,20 +54,20 @@
                     />
                   <${ToggleControl}
                     label="Dismissible"
-                    checked=${isDismissible}
+                    checked=${!!dismissible}
                     onChange=${toggleDismiss}
                   />
               </${PanelBody}>
             </${Panel}>
           </${InspectorControls}>
 
-            <e-alert type=${attributes.type} dismissible=${dismissible}> <${InnerBlocks} /> </e-alert>
+            <e-alert type=${attributes.type} dismissible=${!!dismissible}> <${InnerBlocks} /> </e-alert>
     `)
       },
       save: ({ attributes }) => {
         console.log("save attributes: ", attributes);
         return (
-          html`<e-alert type=${attributes.type} dismissible=${attributes.dismissible}><${InnerBlocks.Content} /></e-alert>`
+          html`<e-alert type=${attributes.type} dismissible=${!!attributes.dismissible}><${InnerBlocks.Content} /></e-alert>`
         );
       },
     },
