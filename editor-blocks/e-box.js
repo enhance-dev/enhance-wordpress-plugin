@@ -24,7 +24,7 @@
           <${InspectorControls}>
             <${Panel} header="My Panel">
               <${PanelBody} title="e-box Settings" initialOpen=${true}>
-                <${PanelRow}>My Panel Inputs and Labels
+                <${PanelRow}>Attributes
                   <${ToggleControl}
                     label="Ordinal Priority"
                     checked=${attributes.ord !== "secondary"}
@@ -34,7 +34,7 @@
               </${PanelBody}>
             </${Panel}>
           </${InspectorControls}>
-        <e-box ord=${attributes.org}>
+        <e-box ord=${attributes.ord}>
           <${InnerBlocks} />
         </e-box>
         </div>

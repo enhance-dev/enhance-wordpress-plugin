@@ -21,7 +21,7 @@ function ELink( $state ) {
 			$innerAttrs
 		)
 	);
-	$anchor           = $isAnchor ? "<a {$innerAttrsString} ><slot></slot></a>" : "<span role=link {$innerAttrsString}><slot></slot></span>";
+	$anchor = $isAnchor ? "<a {$innerAttrsString} ><slot></slot></a>" : "<span role=link {$innerAttrsString}><slot></slot></span>";
 	return <<<HTMLDOC
     <style scope=global>
       e-link {

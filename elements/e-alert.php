@@ -14,56 +14,56 @@ function EAlert( $state ) {
         align-items: center;
         padding: var(--e-space-md);
         background-color: var(--e-color-gray-2);
+      }
 
-        & + & {
+      e-alert + e-alert {
           margin-top: var(--e-space-sm);
-        }
+      }
 
         /* Icon */
-        &[icon]::before {
+      e-alert[icon]::before {
           content: attr(icon);
           font-family: e-icons;
           font-size: var(--e-font-size-lg);
           margin-right: var(--e-space-sm);
-        }
+      }
 
         /* Dismiss button */
-        & e-button[type="remove"]:last-of-type {
+      e-alert e-button[type="remove"]:last-of-type {
           margin-left: auto;
-        }
+      }
 
         /* Types */
-        &[type="info"] {
+      e-alert[type="info"] {
           background-color: var(--e-color-blue-1);
+      }
 
-          &::before {
+      e-alert[type="info"]::before {
             color: var(--e-color-blue-3);
-          }
-        }
+      }
 
-        &[type="success"] {
+      e-alert[type="success"] {
           background-color: var(--e-color-green-1);
+      }
 
-          &::before {
+      e-alert[type="success"]::before {
             color: var(--e-color-green-3);
-          }
-        }
+      }
 
-        &[type="warn"] {
+      e-alert[type="warn"] {
           background-color: var(--e-color-orange-1);
+      }
 
-          &::before {
+      e-alert[type="warn"]::before {
             color: var(--e-color-orange-3);
-          }
-        }
+      }
 
-        &[type="error"] {
+      e-alert[type="error"] {
           background-color: var(--e-color-red-1);
+      }
 
-          &::before {
+      e-alert[type="error"]::before {
             color: var(--e-color-red-3);
-          }
-        }
       }
     </style>
 
