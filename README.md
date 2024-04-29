@@ -10,9 +10,16 @@ These can be added in PHP templates, raw HTML blocks in the editor, or as predef
 2. `enhance-wp-blocks-plugin.php` demonstrates wrapping an Enhance component for use in the block editor.
 This works with the SSR plugin. These blocks are stored in the WP database as HTML (i.e. <my-header>Hi</my-header>) and then the SSR plugin will them wherever they are used.
 
-## Install Plugin
+## Install Plugin Directly
 To add the plugin to a Wordpress project you can clone this repository into a folder in the plugins directory for the project. 
 All required dependencies are included in the vendor directory with the repository so running `composer install` should not be required.
+
+## Install Plugin with Composer
+Composer can also be used to install the plugin to a Wordpress project.
+
+```sh
+composer require enhance-dev/enhance-wordpress-plugin
+```
 
 ## Development Copy of WordPress Instructions
 
