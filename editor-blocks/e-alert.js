@@ -14,11 +14,11 @@
       category: 'e_components',
       attributes: {
         dismissible: {
-          type: 'boolean',
+          type: 'string',
           attribute: 'dismissible',
           source: 'attribute',
           selector: 'e-alert',
-          default: true,
+          default: "true",
         },
         type: {
           type: 'string',
@@ -29,12 +29,9 @@
         },
       },
       edit: ({ attributes, setAttributes }) => {
-        console.log("edit attributes: ", attributes);
-        const dismissible = attributes.dismissible
+        const isDismissible = attributes.dismissible !== "false"
         const toggleDismiss = () => {
-          console.log("toggle attributes before: ", attributes);
-          setAttributes({ dismissible: !dismissible })
-          console.log("toggle attributes after: ", attributes);
+          setAttributes({ dismissible: isDismissible ? 'false' : 'true' })
         }
         return (html`
           <${InspectorControls}>
@@ -54,20 +51,20 @@
                     />
                   <${ToggleControl}
                     label="Dismissible"
-                    checked=${!!dismissible}
+                    checked=${isDismissible}
                     onChange=${toggleDismiss}
                   />
               </${PanelBody}>
             </${Panel}>
           </${InspectorControls}>
+        <e-alert type=${attributes.type} dismissible=${isDismissible ? 'true' : 'false'} > <${InnerBlocks} /> </e-alert>
 
-            <e-alert type=${attributes.type} dismissible=${!!dismissible}> <${InnerBlocks} /> </e-alert>
     `)
       },
       save: ({ attributes }) => {
-        console.log("save attributes: ", attributes);
+        const isDismissible = attributes.dismissible !== "false"
         return (
-          html`<e-alert type=${attributes.type} dismissible=${!!attributes.dismissible}><${InnerBlocks.Content} /></e-alert>`
+          html`<e-alert type=${attributes.type} dismissible=${isDismissible ? 'true' : 'false'} ><${InnerBlocks.Content} /></e-alert>`
         );
       },
     },
